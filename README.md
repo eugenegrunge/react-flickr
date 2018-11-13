@@ -1,2 +1,2 @@
 # react-flickr
-Dispalay and search flickr images
+Display and search flickr images
