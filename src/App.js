@@ -40,7 +40,6 @@ class App extends Component {
     })();
 
     reloadImages = () => {
-        console.log(this.state.limit);
         fetch('https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=7a1702c706ba9d2e0c036dc43aab032b&tags=' + this.state.tagCathegory + '&per_page=' + this.state.limit + '&format=json&nojsoncallback=1')
             .then(function (response) {
                 return response.json();

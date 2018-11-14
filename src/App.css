@@ -4,7 +4,7 @@
 .App .pictures-list {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .App .pictures-list img {
   width: 31%;
