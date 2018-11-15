@@ -1,46 +1,85 @@
-.App {
-  text-align: center;
+*:focus {
+    outline: none;
 }
-.App .pictures-list {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+.react-flickr-app {
+    text-align: center;
 }
-.App .pictures-list img {
-  width: 31%;
-  height: 300px;
-  margin: 10px;
-  border-radius: 4px;
-  display: block;
+
+.react-flickr-app .pictures-list {
+    padding: 0 15px;
+    text-align: left;
 }
-.App input {
-  margin: 20px auto;
-  width: 70%;
-  height: 40px;
-  font-size: 20px;
-  font-weight: normal;
-  display: inline-block;
-  padding: 0 15px;
-  border: 1px solid #20B2AA;
+
+.react-flickr-app .pictures-list .flickr-picture {
+    width: 18.7777%;
+    height: 200px;
+    border-radius: 4px;
+    margin: 0 15px 15px 0;
 }
-.App button {
-  margin: 20px 0 30px 0;
-  padding: 15px;
-  min-width: 200px;
-  border: none;
-  background: #20B2AA;
-  color: #fff;
-  font-size: 16px;
-  border-radius: 4px;
-  cursor: pointer;
+
+.react-flickr-app .pictures-list .flickr-picture:nth-child(5n) {
+    margin-right: 0;
 }
+
+.react-flickr-app .search-flickr-pictures-field {
+    margin: 20px auto;
+    width: 50%;
+    height: 40px;
+    font-size: 20px;
+    font-weight: normal;
+    display: inline-block;
+    padding: 0 15px;
+    border: 1px solid #20B2AA;
+}
+.react-flickr-app .search-btn,
+.react-flickr-app .show-more-btn {
+    border: none;
+    background: #20B2AA;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+.react-flickr-app .search-btn {
+    height: 42px;
+    padding: 0 15px;
+    cursor: pointer;
+    position: relative;
+    top: -2px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.react-flickr-app .show-more-btn {
+    margin: 20px 0 30px 0;
+    padding: 15px;
+    min-width: 200px;
+    border-radius: 4px;
+}
+
 @media screen and (max-width: 1024px) {
-  .App .pictures-list img {
-    width: 46%;
-  }
+    .react-flickr-app .pictures-list .flickr-picture {
+        width: 32%;
+    }
+    .react-flickr-app .pictures-list .flickr-picture:nth-child(5n) {
+        margin-right: 15px;
+    }
+    .react-flickr-app .pictures-list .flickr-picture:nth-child(3n) {
+        margin-right: 0;
+    }
+}
+@media screen and (max-width: 780px) {
+    .react-flickr-app .pictures-list .flickr-picture {
+        width: 31.5%;
+    }
 }
 @media screen and (max-width: 600px) {
-  .App .pictures-list img {
-    width: 92%;
-  }
+    .react-flickr-app .pictures-list .flickr-picture {
+        width: 100%;
+        height: 300px;
+    }
+    .react-flickr-app .pictures-list {
+        text-align: center;
+    }
+    .react-flickr-app .pictures-list .flickr-picture:nth-child(5n) {
+        margin-right: 0;
+    }
 }

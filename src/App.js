@@ -8,7 +8,7 @@ class App extends Component {
         this.state = {
             pictures: [],
             indexValue: 1,
-            tagCathegory: 'snow',
+            tagCathegory: 'autumn',
             limit: 10
         }
     }
@@ -19,10 +19,13 @@ class App extends Component {
 
     handleChange = (e) => {
         this.setState({
-            tagCathegory: e.target.value !== '' ? e.target.value : 'snow',
+            tagCathegory: e.target.value !== '' ? e.target.value : 'autumn',
             limit: 10
-
         });
+    }
+
+    handleSearch = () => {
+        this.reloadImages();
     }
 
     loadMoreImages = () => {
@@ -47,7 +50,7 @@ class App extends Component {
             let picArray = j.photos.photo.map((pic) => {
                 let scrPath = 'https://farm' + pic.farm + '.staticflickr.com/' + pic.server + '/' + pic.id + '_' + pic.secret + '.jpg';
                 return (
-                    <img alt="alt" src={scrPath} key={pic.id}/>
+                    <img alt="alt" src={scrPath} key={pic.id} className="flickr-picture" />
                 )
             })
             this.setState({pictures: picArray});
@@ -56,18 +59,19 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
-                <input type="text" placeholder="Search images"
-                       onChange={this.handleChange}
-                       onKeyUp={() => this.Delay(function () {
-                           this.reloadImages();
-                       }.bind(this), 1000)}
+            <div className="react-flickr-app">
+                <input
+                    type="text"
+                    placeholder="Search images"
+                    className="search-flickr-pictures-field"
+                    onChange={this.handleChange}
                 />
+                <button className="search-btn" onClick={this.handleSearch}>Search</button>
                 <div className="pictures-list">
                     {this.state.pictures}
                 </div>
 
-                <button onClick={this.loadMoreImages}>Show More</button>
+                <button onClick={this.loadMoreImages} className="show-more-btn">Show More</button>
 
             </div>
         );
